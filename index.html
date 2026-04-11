@@ -79,7 +79,19 @@
 
   /* SQUAD */
   #squad { background:var(--dark); }
-  .squad-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1.1rem; margin-top:2.5rem; }
+  .mentor-card {
+    background: linear-gradient(135deg, #0f1e2e, #0a1520);
+    border: 1px solid rgba(0,201,167,0.3);
+    padding: 2rem 1.5rem; text-align:center;
+    clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+    margin-bottom: 2rem; max-width: 260px;
+  }
+  .mentor-label { font-family:'Barlow Condensed',sans-serif; font-size:0.68rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--teal); margin-bottom:0.6rem; }
+  .mentor-avatar { width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg,#0d2a3a,#061218); border:2px solid var(--teal); display:flex; align-items:center; justify-content:center; font-size:1.8rem; margin:0 auto 0.8rem; }
+  .mentor-name { font-family:'Bebas Neue',sans-serif; font-size:1.5rem; letter-spacing:0.06em; color:var(--white); }
+  .mentor-role { font-size:0.74rem; color:var(--teal); font-family:'Barlow Condensed',sans-serif; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.4rem; }
+  .mentor-badge { display:inline-block; font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--dark); background:var(--teal); padding:0.18rem 0.6rem; margin-top:0.3rem; }
+  .squad-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1.1rem; margin-top:0; }
   .player-card { background:var(--dark2); border:1px solid rgba(255,255,255,0.07); padding:1.6rem 1.3rem; text-align:center; position:relative; overflow:hidden; clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px)); transition:border-color 0.2s,transform 0.2s; }
   .player-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--teal),var(--orange)); opacity:0; transition:opacity 0.2s; }
   .player-card:hover { border-color:rgba(0,201,167,0.35); transform:translateY(-4px); }
@@ -249,7 +261,7 @@
       <a href="#tournament" class="btn-outline">2026 Tournament</a>
     </div>
     <div class="hero-stats">
-      <div><span class="stat-num">11+</span><span class="stat-label">Players</span></div>
+      <div><span class="stat-num">12+</span><span class="stat-label">Players</span></div>
       <div><span class="stat-num">OH</span><span class="stat-label">Based in Ohio</span></div>
       <div><span class="stat-num">2012</span><span class="stat-label">Founded</span></div>
     </div>
@@ -263,7 +275,7 @@
       <div class="section-tag">Our Story</div>
       <h2 class="section-title">More Than<br>A Team</h2>
       <p>The <strong>Mustangz</strong> were born in 2012 out of a shared love for cricket in the great state of Ohio. What started as a group of passionate players has grown into a competitive, close-knit team that competes across regional leagues and tournaments.</p>
-      <p>We represent Ohio cricket with pride — playing attacking, aggressive cricket while building friendships that last off the pitch too. Led by co-captains <strong>Balaji S</strong> and <strong>Senthil S</strong>, the Mustangz are here to make their mark.</p>
+      <p>We represent Ohio cricket with pride — playing attacking, aggressive cricket while building friendships that last off the pitch too. Led by captain <strong>Balaji S</strong> and mentored by <strong>Senthil S</strong>, the Mustangz are here to make their mark.</p>
       <a href="#contact" class="btn-primary" style="margin-top:1rem;display:inline-block;">Join the Team</a>
     </div>
     <div class="about-cards">
@@ -279,9 +291,18 @@
 <section id="squad">
   <div class="section-tag">The Roster</div>
   <h2 class="section-title">Meet the <span style="color:var(--teal)">Mustangz</span></h2>
-  <p style="color:var(--muted);margin-bottom:2rem;font-size:1rem;">Led by co-captains <strong style="color:var(--orange)">Balaji S</strong> &amp; <strong style="color:var(--orange)">Senthil S</strong> — the heart and engine of the Mustangz.</p>
-  <div class="squad-grid">
+  <p style="color:var(--muted);margin-bottom:2rem;font-size:1rem;">Captained by <strong style="color:var(--orange)">Balaji S</strong> and mentored by <strong style="color:var(--teal)">Senthil S</strong> — the leadership that drives the Mustangz forward.</p>
 
+  <!-- Mentor card -->
+  <div class="mentor-card">
+    <div class="mentor-label">🎓 Team Mentor</div>
+    <div class="mentor-avatar">🥊</div>
+    <div class="mentor-name">Senthil S</div>
+    <div class="mentor-role">Wicket Keeper Batsman</div>
+    <div class="mentor-badge">Mentor</div>
+  </div>
+
+  <div class="squad-grid">
     <div class="player-card">
       <div class="player-number">01</div>
       <div class="player-avatar">🧢</div>
@@ -289,79 +310,66 @@
       <div class="player-role">All Rounder</div>
       <div class="captain-badge">⚡ Captain</div>
     </div>
-
     <div class="player-card">
       <div class="player-number">02</div>
-      <div class="player-avatar">🥊</div>
-      <div class="player-name">Senthil S</div>
-      <div class="player-role">Wicket Keeper Batsman / Spinner</div>
-      <div class="captain-badge">⚡ Co-Captain</div>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">03</div>
       <div class="player-avatar">🏏</div>
       <div class="player-name">Anantha S</div>
       <div class="player-role">Top Order Batsman</div>
     </div>
-
     <div class="player-card">
-      <div class="player-number">04</div>
+      <div class="player-number">03</div>
       <div class="player-avatar">⚡</div>
       <div class="player-name">Murugesh B</div>
       <div class="player-role">All Rounder</div>
     </div>
-
     <div class="player-card">
-      <div class="player-number">05</div>
+      <div class="player-number">04</div>
       <div class="player-avatar">🌀</div>
       <div class="player-name">Pradeepan</div>
       <div class="player-role">All Rounder</div>
-      <div style="font-size:0.62rem;color:rgba(255,107,53,0.7);margin-top:0.35rem;font-style:italic;font-family:'Barlow',sans-serif;line-height:1.3;">Subjected to Star &amp; Planet<br>Alignments on Game Day 🌟</div>
     </div>
-
     <div class="player-card">
-      <div class="player-number">06</div>
+      <div class="player-number">05</div>
       <div class="player-avatar">🏃</div>
       <div class="player-name">Rohit</div>
-      <div class="player-role">Gun Fielder</div>
+      <div class="player-role">Top Order Batsman</div>
     </div>
-
     <div class="player-card">
-      <div class="player-number">07</div>
+      <div class="player-number">06</div>
       <div class="player-avatar">💥</div>
       <div class="player-name">Azagiry</div>
       <div class="player-role">Power Hitter</div>
     </div>
-
     <div class="player-card">
-      <div class="player-number">08</div>
+      <div class="player-number">07</div>
       <div class="player-avatar">🏏</div>
       <div class="player-name">Kaushik</div>
-      <div class="player-role">Class Batsman</div>
+      <div class="player-role">Middle Order Batsman</div>
     </div>
-
     <div class="player-card">
-      <div class="player-number">09</div>
+      <div class="player-number">08</div>
       <div class="player-avatar">💪</div>
       <div class="player-name">Mathi</div>
-      <div class="player-role">Coolie Power House</div>
+      <div class="player-role">Top Order Batsman</div>
     </div>
-
     <div class="player-card">
-      <div class="player-number">10</div>
+      <div class="player-number">09</div>
       <div class="player-avatar">🌱</div>
       <div class="player-name">Caleb</div>
-      <div class="player-role">Aspiring Young Batsman</div>
+      <div class="player-role">Middle Order Batsman</div>
     </div>
-
-    <div class="player-card" style="border-color:rgba(255,107,53,0.2);">
+    <div class="player-card">
+      <div class="player-number">10</div>
+      <div class="player-avatar">🏏</div>
+      <div class="player-name">Palani</div>
+      <div class="player-role">Middle Order Batsman</div>
+    </div>
+    <div class="player-card">
       <div class="player-number">11</div>
-      <div class="player-avatar" style="border-color:rgba(255,107,53,0.3);">🔍</div>
+      <div class="player-avatar">⚡</div>
       <div class="player-name">David</div>
-      <div class="player-role" style="color:var(--orange);">To Be Found Soon</div>
+      <div class="player-role">All Rounder</div>
     </div>
-
   </div>
 </section>
 
@@ -441,25 +449,23 @@
     </div>
     <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Nirmal</span></div>
     <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Revi P</span></div>
-    <div class="ww-card" style="border-color:rgba(255,80,80,0.25);">
-      <span class="ww-icon">🍁</span><span class="ww-name">Shan</span>
-      <span class="ww-sub" style="color:#f87171;">Mustangz Canada's All Rounder</span>
-    </div>
-    <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">C A P P U</span></div>
+    <div class="ww-card"><span class="ww-icon">🍁</span><span class="ww-name">Shan</span></div>
+    <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Cappu</span></div>
     <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Balamurali S</span></div>
     <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Vidhya P</span></div>
     <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Senthil K</span></div>
     <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Ponragavan</span></div>
     <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Jey</span></div>
     <div class="ww-card" style="border-color:rgba(255,107,53,0.2);">
-      <span class="ww-icon">🐉</span><span class="ww-name">Sridhar</span>
-      <span class="ww-sub" style="color:var(--orange);">TVK Dragon</span>
+      <span class="ww-icon">🐉</span>
+      <span class="ww-name">Dragon Sridhar</span>
     </div>
     <div class="ww-card" style="border-color:rgba(255,180,50,0.2);">
-      <span class="ww-icon">🇮🇳</span><span class="ww-name">Parsu</span>
-      <span class="ww-sub" style="color:#fbbf24;">Mustangz India Spokesperson</span>
+      <span class="ww-icon">🇮🇳</span>
+      <span class="ww-name">Parsu The Legend</span>
     </div>
     <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Gokul</span></div>
+    <div class="ww-card"><span class="ww-icon">🙌</span><span class="ww-name">Dhana</span></div>
   </div>
 </section>
 
@@ -575,7 +581,6 @@
   const offensiveWords = ['spam','hate','abuse','idiot','stupid','damn','crap','racist','sexist','jerk','loser','moron','dumb','shut up','ugly','scam','fraud'];
   function containsOffensive(t) { return offensiveWords.some(w => t.toLowerCase().includes(w)); }
   function showErr(id, show) { document.getElementById(id).style.display = show ? 'block' : 'none'; }
-
   function handleSubmit(e) {
     e.preventDefault();
     let valid = true;
@@ -600,7 +605,6 @@
       if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
     }, 1000);
   }
-
   const secs = document.querySelectorAll('section[id]');
   const nls = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
