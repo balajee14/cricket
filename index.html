@@ -747,14 +747,14 @@
   //    Set the template "To email" to: mustangz.sportclub@gmail.com
   //    Note your TEMPLATE_ID and PUBLIC_KEY
   // 4. Replace the 3 placeholder values below with your real IDs:
-  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz789'
-  const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abcDEFghiJKL'
+  const EMAILJS_SERVICE_ID  = 'service_o8wveie';   // e.g. 'service_abc123'
+  const EMAILJS_TEMPLATE_ID = 'template_j1lven4';  // e.g. 'template_xyz789'
+  const EMAILJS_PUBLIC_KEY  = 'owWCy1yJoOPBFF0Jm';   // e.g. 'abcDEFghiJKL'
   // ──────────────────────────────────────────────────────────────────────────
 
   (function() {
     if (typeof emailjs !== 'undefined') {
-      emailjs.init({ publicKey:"owWCy1yJoOPBFF0Jm"});
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
     }
   })();
 
@@ -813,7 +813,7 @@
     };
 
     if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-      emailjs.send(service_o8wveie, template_j1lven4, templateParams)
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
         .then(function() {
           hide('surveySending');
           show('surveySuccess');
